@@ -17,67 +17,23 @@ public class GearElectrovalve extends Electrovalve {
 	/**
 	 * Description of the property gears.
 	 */
-	public Gear gears = null;
+	public Gear gear;
 
-	/**
-	 * Description of the property generalElectrovalves.
-	 */
-	public GeneralElectrovalve generalElectrovalves = null;
-
-	// Start of user code (user defined attributes for GearElectrovalve)
-
-	// End of user code
-
-	/**
-	 * The constructor.
-	 */
-	public GearElectrovalve() {
-		// Start of user code constructor for GearElectrovalve)
-		super();
-		// End of user code
+	public void setUp(){
+		gear.setUp(true);
+		gear.setDown(false);
+		gear.setMoving(false);
 	}
-
-	// Start of user code (user defined methods for GearElectrovalve)
-
-	// End of user code
-	/**
-	 * Returns gears.
-	 * @return gears 
-	 */
-	public Gear getGears() {
-		return this.gears;
+	
+	public void setMoving(){
+		gear.setUp(false);
+		gear.setDown(true);
+		gear.setMoving(false);
 	}
-
-	/**
-	 * Sets a value to attribute gears. 
-	 * @param newGears 
-	 */
-	public void setGears(Gear newGears) {
-		if (this.gears != null) {
-			this.gears.set(null);
-		}
-		this.gears.set(this);
+	
+	public void setDown(){
+		gear.setUp(false);
+		gear.setDown(true);
+		gear.setMoving(false);
 	}
-
-	/**
-	 * Returns generalElectrovalves.
-	 * @return generalElectrovalves 
-	 */
-	public GeneralElectrovalve getGeneralElectrovalves() {
-		return this.generalElectrovalves;
-	}
-
-	/**
-	 * Sets a value to attribute generalElectrovalves. 
-	 * @param newGeneralElectrovalves 
-	 */
-	public void setGeneralElectrovalves(GeneralElectrovalve newGeneralElectrovalves) {
-		this.generalElectrovalves = newGeneralElectrovalves;
-	}
-
-	public void set(Gear gear) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

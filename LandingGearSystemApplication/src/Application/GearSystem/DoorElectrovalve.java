@@ -15,61 +15,26 @@ import Application.GearSystem.Electrovalve;
  */
 public class DoorElectrovalve extends Electrovalve {
 	/**
-	 * Description of the property generalElectrovalves.
-	 */
-	public GeneralElectrovalve generalElectrovalves = null;
-
-	/**
 	 * Description of the property doors.
 	 */
-	public Door doors = null;
+	public Door door;
 
-	// Start of user code (user defined attributes for DoorElectrovalve)
-
-	// End of user code
-
-	/**
-	 * The constructor.
-	 */
-	public DoorElectrovalve() {
-		// Start of user code constructor for DoorElectrovalve)
-		super();
-		// End of user code
+	public void setOpen(){
+		door.setOpen(true);
+		door.setClosed(false);
+		door.setMoving(false);
 	}
-
-	// Start of user code (user defined methods for DoorElectrovalve)
-
-	// End of user code
-	/**
-	 * Returns generalElectrovalves.
-	 * @return generalElectrovalves 
-	 */
-	public GeneralElectrovalve getGeneralElectrovalves() {
-		return this.generalElectrovalves;
+	
+	public void setMoving(){
+		door.setOpen(false);
+		door.setClosed(false);
+		door.setMoving(true);
 	}
-
-	/**
-	 * Sets a value to attribute generalElectrovalves. 
-	 * @param newGeneralElectrovalves 
-	 */
-	public void setGeneralElectrovalves(GeneralElectrovalve newGeneralElectrovalves) {
-		this.generalElectrovalves = newGeneralElectrovalves;
-	}
-
-	/**
-	 * Returns doors.
-	 * @return doors 
-	 */
-	public Door getDoors() {
-		return this.doors;
-	}
-
-	/**
-	 * Sets a value to attribute doors. 
-	 * @param newDoors 
-	 */
-	public void setDoors(Door newDoors) {
-		this.doors = newDoors;
+	
+	public void setClosed(){
+		door.setOpen(false);
+		door.setClosed(true);
+		door.setMoving(false);
 	}
 
 }
