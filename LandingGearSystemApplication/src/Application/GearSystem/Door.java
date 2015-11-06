@@ -3,7 +3,6 @@
  *******************************************************************************/
 package Application.GearSystem;
 
-import java.util.HashSet;
 
 // Start of user code (user defined imports)
 
@@ -15,46 +14,44 @@ import java.util.HashSet;
  * @author lemee
  */
 public class Door {
-	/**
-	 * Description of the property doorSensors.
-	 */
-	public HashSet<DoorSensor> doorSensors = new HashSet<DoorSensor>();
-
-	/**
-	 * Description of the property doorElectrovalves.
-	 */
-	public HashSet<DoorElectrovalve> doorElectrovalves = new HashSet<DoorElectrovalve>();
-
-	// Start of user code (user defined attributes for Door)
-
-	// End of user code
-
+	
+	private boolean open;
+	private boolean moving;
+	private boolean closed;
+	
 	/**
 	 * The constructor.
 	 */
 	public Door() {
 		// Start of user code constructor for Door)
 		super();
+		open = false;
+		moving = false;
+		closed = true;
 		// End of user code
 	}
 
-	// Start of user code (user defined methods for Door)
-
-	// End of user code
-	/**
-	 * Returns doorSensors.
-	 * @return doorSensors 
-	 */
-	public HashSet<DoorSensor> getDoorSensors() {
-		return this.doorSensors;
+	public boolean isOpen() {
+		return open;
 	}
 
-	/**
-	 * Returns doorElectrovalves.
-	 * @return doorElectrovalves 
-	 */
-	public HashSet<DoorElectrovalve> getDoorElectrovalves() {
-		return this.doorElectrovalves;
+	public void setOpen(boolean open) {
+		this.open = open;
 	}
 
+	public boolean isMoving() {
+		return moving;
+	}
+
+	public void setMoving(boolean moving) {
+		this.moving = moving;
+	}
+
+	public boolean isClosed() {
+		return closed;
+	}
+
+	public void setClosed(boolean closed) {
+		this.closed = closed;
+	}
 }

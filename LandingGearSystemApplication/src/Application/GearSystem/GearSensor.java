@@ -14,33 +14,35 @@ import Application.GearSystem.Sensor;
  * @author lemee
  */
 public class GearSensor extends Sensor {
-	/**
-	 * Description of the property gears.
-	 */
-	public Gear gears = null;
+	
+	//Gear
+	private Gear gear = null;
+	
+	//Boolean
+	private boolean isGearUp;
+	private boolean isGearMoving;
+	private boolean isGearDown;
 
-	// Start of user code (user defined attributes for GearSensor)
-
-	// End of user code
 
 	/**
 	 * The constructor.
 	 */
 	public GearSensor() {
-		// Start of user code constructor for GearSensor)
+
 		super();
-		// End of user code
+		isGearUp = true;
+		isGearMoving = false;		
+		isGearDown = false;
+		
+		gear = new Gear();
 	}
 
-	// Start of user code (user defined methods for GearSensor)
-
-	// End of user code
 	/**
 	 * Returns gears.
 	 * @return gears 
 	 */
 	public Gear getGears() {
-		return this.gears;
+		return this.gear;
 	}
 
 	/**
@@ -48,15 +50,32 @@ public class GearSensor extends Sensor {
 	 * @param newGears 
 	 */
 	public void setGears(Gear newGears) {
-		if (this.gears != null) {
-			this.gears.set(null);
-		}
-		this.gears.set(this);
+		this.gear = newGears;
+	}
+	
+	//Getters and Setters
+	public boolean isGearUp() {
+		return isGearUp;
 	}
 
-	public void set(Gear gear) {
-		// TODO Auto-generated method stub
-		
+	public void setGearUp(boolean isGearUp) {
+		this.isGearUp = isGearUp;
+	}
+
+	public boolean isGearMoving() {
+		return isGearMoving;
+	}
+
+	public void setGearMoving(boolean isGearMoving) {
+		this.isGearMoving = isGearMoving;
+	}
+
+	public boolean isGearDown() {
+		return isGearDown;
+	}
+
+	public void setGearDown(boolean isGearDown) {
+		this.isGearDown = isGearDown;
 	}
 
 }

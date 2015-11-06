@@ -14,33 +14,36 @@ import Application.GearSystem.Sensor;
  * @author lemee
  */
 public class DoorSensor extends Sensor {
-	/**
-	 * Description of the property doors.
-	 */
-	public Door doors = null;
-
-	// Start of user code (user defined attributes for DoorSensor)
-
-	// End of user code
+	
+	//Door
+	private Door door = null;
+	
+	//Booleans
+	private boolean isDoorOpen;
+	private boolean isDoorMoving;
+	private boolean isDoorClosed;
+	
 
 	/**
 	 * The constructor.
 	 */
 	public DoorSensor() {
-		// Start of user code constructor for DoorSensor)
+		
 		super();
-		// End of user code
+		isDoorOpen = false;
+		isDoorMoving = false;
+		isDoorClosed = true;
+	
+		door = new Door();
 	}
 
-	// Start of user code (user defined methods for DoorSensor)
-
-	// End of user code
+	
 	/**
 	 * Returns doors.
 	 * @return doors 
 	 */
 	public Door getDoors() {
-		return this.doors;
+		return this.door;
 	}
 
 	/**
@@ -48,7 +51,32 @@ public class DoorSensor extends Sensor {
 	 * @param newDoors 
 	 */
 	public void setDoors(Door newDoors) {
-		this.doors = newDoors;
+		this.door = newDoors;
+	}
+	
+	//Getters and Setters
+	public boolean isDoorOpen() {
+		return isDoorOpen;
+	}
+
+	public void setDoorOpen(boolean isDoorOpen) {
+		this.isDoorOpen = isDoorOpen;
+	}
+
+	public boolean isDoorMoving() {
+		return isDoorMoving;
+	}
+
+	public void setDoorMoving(boolean isDoorMoving) {
+		this.isDoorMoving = isDoorMoving;
+	}
+
+	public boolean isDoorClosed() {
+		return isDoorClosed;
+	}
+
+	public void setDoorClosed(boolean isDoorClosed) {
+		this.isDoorClosed = isDoorClosed;
 	}
 
 }

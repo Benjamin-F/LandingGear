@@ -13,73 +13,45 @@ package Application.GearSystem;
  * @author lemee
  */
 public class Gear {
-	/**
-	 * Description of the property gearSensors.
-	 */
-	public GearSensor gearSensors = null;
+	
+	private boolean up;
+	private boolean moving;
+	private boolean down;
+	
+	public boolean isUp() {
+		return up;
+	}
 
-	/**
-	 * Description of the property gearElectrovalves.
-	 */
-	public GearElectrovalve gearElectrovalves = null;
+	public void setUp(boolean up) {
+		this.up = up;
+	}
 
-	// Start of user code (user defined attributes for Gear)
+	public boolean isMoving() {
+		return moving;
+	}
 
-	// End of user code
+	public void setMoving(boolean moving) {
+		this.moving = moving;
+	}
 
+	public boolean isDown() {
+		return down;
+	}
+
+	public void setDown(boolean down) {
+		this.down = down;
+	}
+
+	
 	/**
 	 * The constructor.
 	 */
 	public Gear() {
 		// Start of user code constructor for Gear)
 		super();
+		up = true;
+		moving = false;
+		down = false;
 		// End of user code
 	}
-
-	// Start of user code (user defined methods for Gear)
-
-	// End of user code
-	/**
-	 * Returns gearSensors.
-	 * @return gearSensors 
-	 */
-	public GearSensor getGearSensors() {
-		return this.gearSensors;
-	}
-
-	/**
-	 * Sets a value to attribute gearSensors. 
-	 * @param newGearSensors 
-	 */
-	public void setGearSensors(GearSensor newGearSensors) {
-		if (this.gearSensors != null) {
-			this.gearSensors.set(null);
-		}
-		this.gearSensors.set(this);
-	}
-
-	/**
-	 * Returns gearElectrovalves.
-	 * @return gearElectrovalves 
-	 */
-	public GearElectrovalve getGearElectrovalves() {
-		return this.gearElectrovalves;
-	}
-
-	/**
-	 * Sets a value to attribute gearElectrovalves. 
-	 * @param newGearElectrovalves 
-	 */
-	public void setGearElectrovalves(GearElectrovalve newGearElectrovalves) {
-		if (this.gearElectrovalves != null) {
-			this.gearElectrovalves.set(null);
-		}
-		this.gearElectrovalves.set(this);
-	}
-
-	public void set(Object object) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }
