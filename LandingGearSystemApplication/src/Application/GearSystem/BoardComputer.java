@@ -23,17 +23,17 @@ public class BoardComputer {
 	 */
 	public ViewController viewController = null;
 
+	private DoorElectrovalve OpenDoorsElectrovalve = null;
+	private DoorElectrovalve CloseDoorsElectrovalve = null;
+	private GearElectrovalve OpenGearsElectrovalve = null;
+	private GearElectrovalve ClodeGearsElectrovalve = null;
 
-	/**
-	 * Description of the property electrovalves.
-	 */
-	public HashSet<Electrovalve> electrovalves = new HashSet<Electrovalve>();
+	private ArrayList<Sensor> doorSensors = new ArrayList<Sensor>();
+	private ArrayList<Sensor> gearSensors = new ArrayList<Sensor>();
 	
-	public ArrayList<Sensor> doorSensors = new ArrayList<Sensor>();
-	public ArrayList<Sensor> gearSensors = new ArrayList<Sensor>();
+	private ArrayList<Door> doors = new ArrayList<Door>();
+	private ArrayList<Gear> gears = new ArrayList<Gear>();
 	
-	public ArrayList<Door> doors = new ArrayList<Door>();
-	public ArrayList<Gear> gears = new ArrayList<Gear>();
 
 	/**
 	 * The constructor.
@@ -48,10 +48,10 @@ public class BoardComputer {
 		Door tmpDoor = null;
 		Gear tmpGear = null;
 		
-		DoorElectrovalve OpenDoorsElectrovalve = new DoorElectrovalve();
-		DoorElectrovalve CloseDoorsElectrovalve = new DoorElectrovalve();
-		GearElectrovalve OpenGearsElectrovalve = new GearElectrovalve();
-		GearElectrovalve ClodeGearsElectrovalve = new GearElectrovalve();
+		OpenDoorsElectrovalve = new DoorElectrovalve();
+		CloseDoorsElectrovalve = new DoorElectrovalve();
+		OpenGearsElectrovalve = new GearElectrovalve();
+		ClodeGearsElectrovalve = new GearElectrovalve();
 
 		for(int i=0; i<3; i++){
 			tmpDoor = new Door(i);
@@ -95,22 +95,4 @@ public class BoardComputer {
 	public void setViewController(ViewController newViewController) {
 		this.viewController = newViewController;
 	}
-
-	/**
-	 * Returns electrovalves.
-	 * @return electrovalves 
-	 */
-	public HashSet<Electrovalve> getElectrovalves() {
-		return this.electrovalves;
-	}
-
-	public void set(Object object) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	public void pushDown(){
-		
-	}
-
 }
