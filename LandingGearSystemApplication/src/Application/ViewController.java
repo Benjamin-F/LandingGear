@@ -121,15 +121,15 @@ public class ViewController {
 	public void setGearState(int id, String state){
 		switch(state){
 		case "extracted":
-				this.gear_state[id-1].setImage(new Image(getClass()
+				this.gear_state[id].setImage(new Image(getClass()
 						.getResourceAsStream(GEAR_EXTRACTED)));
 			break;
 		case "moving":
-			this.gear_state[id-1].setImage(new Image(getClass()
+			this.gear_state[id].setImage(new Image(getClass()
 					.getResourceAsStream(GEAR_MOVING)));
 			break;
 		case "retracted":
-			this.gear_state[id-1].setImage(new Image(getClass()
+			this.gear_state[id].setImage(new Image(getClass()
 					.getResourceAsStream(GEAR_RETRACTED)));
 		break;
 		}
@@ -142,15 +142,15 @@ public class ViewController {
 	public void setDoorState(int id, String state){
 		switch(state){
 		case "opened":
-				this.door_state[id-1].setImage(new Image(getClass()
+				this.door_state[id].setImage(new Image(getClass()
 						.getResourceAsStream(DOOR_OPENED)));
 			break;
 		case "moving":
-			this.door_state[id-1].setImage(new Image(getClass()
+			this.door_state[id].setImage(new Image(getClass()
 					.getResourceAsStream(DOOR_MOVING)));
 			break;
 		case "closed":
-			this.door_state[id-1].setImage(new Image(getClass()
+			this.door_state[id].setImage(new Image(getClass()
 					.getResourceAsStream(DOOR_CLOSED)));
 		break;
 		}

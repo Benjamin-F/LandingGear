@@ -6,6 +6,7 @@ package Application.GearSystem;
 import Application.ViewController;
 import Application.GearSystem.Sensor;
 // Start of user code (user defined imports)
+import javafx.application.Platform;
 
 // End of user code
 
@@ -17,27 +18,46 @@ import Application.GearSystem.Sensor;
 public class DoorSensor extends Sensor {
 	
 	public void run(){
-		//Test en continu
+		while(true){
+			try {
+				if(door.isMoving()){
+					Platform.runLater(new Runnable() {
+					    public void run() {
+					    	viewController.setDoorState(door.getId(), "moving");
+					    }
+					});
+				}
+				else if(door.isClosed()){
+					Platform.runLater(new Runnable() {
+					    public void run() {
+					    	viewController.setDoorState(door.getId(), "closed");
+					    }
+					});
+				}
+				else if(door.isOpen()){
+					Platform.runLater(new Runnable() {
+					    public void run() {
+					    	viewController.setDoorState(door.getId(), "opened");
+					    }
+					});
+				}
+				Thread.sleep(1000);
+				
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	//Door
 	private Door door = null;
 	
-	//Booleans
-	private boolean isDoorOpen;
-	private boolean isDoorMoving;
-	private boolean isDoorClosed;
-	
-
 	/**
 	 * The constructor.
 	 */
 	public DoorSensor(ViewController viewController, Door door) {
 		
 		super(viewController);
-		isDoorOpen = false;
-		isDoorMoving = false;
-		isDoorClosed = true;
 	
 		this.door = door;
 	}
@@ -58,30 +78,4 @@ public class DoorSensor extends Sensor {
 	public void setDoor(Door newDoors) {
 		this.door = newDoors;
 	}
-	
-	//Getters and Setters
-	public boolean isDoorOpen() {
-		return isDoorOpen;
-	}
-
-	public void setDoorOpen(boolean isDoorOpen) {
-		this.isDoorOpen = isDoorOpen;
-	}
-
-	public boolean isDoorMoving() {
-		return isDoorMoving;
-	}
-
-	public void setDoorMoving(boolean isDoorMoving) {
-		this.isDoorMoving = isDoorMoving;
-	}
-
-	public boolean isDoorClosed() {
-		return isDoorClosed;
-	}
-
-	public void setDoorClosed(boolean isDoorClosed) {
-		this.isDoorClosed = isDoorClosed;
-	}
-
 }

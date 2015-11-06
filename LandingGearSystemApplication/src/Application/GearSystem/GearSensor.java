@@ -6,6 +6,7 @@ package Application.GearSystem;
 import Application.ViewController;
 import Application.GearSystem.Sensor;
 // Start of user code (user defined imports)
+import javafx.application.Platform;
 
 // End of user code
 
@@ -19,11 +20,27 @@ public class GearSensor extends Sensor {
 	public void run(){
 		while(true){
 			try {
-				viewController.setFeuState("orange");
-				Thread.sleep(1000);
-				viewController.setFeuState("red");
-				Thread.sleep(1000);
-				viewController.setFeuState("green");
+				if(gear.isMoving()){
+					Platform.runLater(new Runnable() {
+					    public void run() {
+					    	viewController.setGearState(gear.getId(), "moving");
+					    }
+					});
+				}
+				else if(gear.isDown()){
+					Platform.runLater(new Runnable() {
+					    public void run() {
+					    	viewController.setGearState(gear.getId(), "extracted");
+					    }
+					});
+				}
+				else if(gear.isUp()){
+					Platform.runLater(new Runnable() {
+					    public void run() {
+					    	viewController.setGearState(gear.getId(), "retracted");
+					    }
+					});
+				}
 				Thread.sleep(1000);
 				
 			} catch (InterruptedException e) {
@@ -34,21 +51,12 @@ public class GearSensor extends Sensor {
 
 	//Gear
 	private Gear gear = null;
-	
-	//Boolean
-	private boolean isGearUp;
-	private boolean isGearMoving;
-	private boolean isGearDown;
-
 
 	/**
 	 * The constructor.
 	 */
 	public GearSensor(ViewController viewController, Gear gear) {
 		super(viewController);
-		isGearUp = true;
-		isGearMoving = false;		
-		isGearDown = false;
 		
 		this.gear = gear;
 	}
@@ -67,31 +75,6 @@ public class GearSensor extends Sensor {
 	 */
 	public void setGear(Gear newGears) {
 		this.gear = newGears;
-	}
-	
-	//Getters and Setters
-	public boolean isGearUp() {
-		return isGearUp;
-	}
-
-	public void setGearUp(boolean isGearUp) {
-		this.isGearUp = isGearUp;
-	}
-
-	public boolean isGearMoving() {
-		return isGearMoving;
-	}
-
-	public void setGearMoving(boolean isGearMoving) {
-		this.isGearMoving = isGearMoving;
-	}
-
-	public boolean isGearDown() {
-		return isGearDown;
-	}
-
-	public void setGearDown(boolean isGearDown) {
-		this.isGearDown = isGearDown;
 	}
 
 }
