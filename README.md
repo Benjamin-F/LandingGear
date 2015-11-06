@@ -27,9 +27,9 @@ Indeed, our project is small and can easily be splitted into small functionnal p
 
 ### II. Diagrams
 Please, find in this repository the following diagrams:
--Use case
--Class
--Activity
--State Machien
+- Use case
+- Class
+- Activity
+- State Machine
 
 
