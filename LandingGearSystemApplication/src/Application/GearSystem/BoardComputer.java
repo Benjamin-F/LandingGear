@@ -28,7 +28,6 @@ public class BoardComputer {
 	 * Description of the property electrovalves.
 	 */
 	public HashSet<Electrovalve> electrovalves = new HashSet<Electrovalve>();
-
 	
 	public ArrayList<Sensor> doorSensors = new ArrayList<Sensor>();
 	public ArrayList<Sensor> gearSensors = new ArrayList<Sensor>();
@@ -48,6 +47,11 @@ public class BoardComputer {
 		DoorSensor tmpDoorSensor = null;
 		Door tmpDoor = null;
 		Gear tmpGear = null;
+		
+		DoorElectrovalve OpenDoorsElectrovalve = new DoorElectrovalve();
+		DoorElectrovalve CloseDoorsElectrovalve = new DoorElectrovalve();
+		GearElectrovalve OpenGearsElectrovalve = new GearElectrovalve();
+		GearElectrovalve ClodeGearsElectrovalve = new GearElectrovalve();
 
 		for(int i=0; i<3; i++){
 			tmpDoor = new Door(i);
@@ -65,6 +69,12 @@ public class BoardComputer {
 			tmpDoorSensor.start();
 			tmpGearSensor.start();
 		}
+		
+		OpenDoorsElectrovalve.doors = doors;
+		CloseDoorsElectrovalve.doors = doors;
+		OpenGearsElectrovalve.gears = gears;
+		ClodeGearsElectrovalve.gears = gears;
+		
 	}
 
 	// Start of user code (user defined methods for BoardComputer)
