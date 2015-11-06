@@ -3,6 +3,8 @@
  *******************************************************************************/
 package Application.GearSystem;
 
+import java.util.ArrayList;
+
 import Application.GearSystem.Electrovalve;
 // Start of user code (user defined imports)
 
@@ -17,24 +19,30 @@ public class DoorElectrovalve extends Electrovalve {
 	/**
 	 * Description of the property doors.
 	 */
-	public Door door;
+	public ArrayList<Door> doors;
 
 	public void setOpen(){
-		door.setOpen(true);
-		door.setClosed(false);
-		door.setMoving(false);
+		for(int i=0; i<doors.size(); i++){
+			doors.get(i).setOpen(true);
+			doors.get(i).setMoving(false);
+			doors.get(i).setClosed(false);
+		}
 	}
 	
 	public void setMoving(){
-		door.setOpen(false);
-		door.setClosed(false);
-		door.setMoving(true);
+		for(int i=0; i<doors.size(); i++){
+			doors.get(i).setOpen(false);
+			doors.get(i).setMoving(true);
+			doors.get(i).setClosed(false);
+		}
 	}
 	
 	public void setClosed(){
-		door.setOpen(false);
-		door.setClosed(true);
-		door.setMoving(false);
+		for(int i=0; i<doors.size(); i++){
+			doors.get(i).setOpen(false);
+			doors.get(i).setMoving(false);
+			doors.get(i).setClosed(true);
+		}
 	}
 
 }

@@ -3,6 +3,8 @@
  *******************************************************************************/
 package Application.GearSystem;
 
+import java.util.ArrayList;
+
 import Application.GearSystem.Electrovalve;
 // Start of user code (user defined imports)
 
@@ -17,23 +19,29 @@ public class GearElectrovalve extends Electrovalve {
 	/**
 	 * Description of the property gears.
 	 */
-	public Gear gear;
+	public ArrayList<Gear> gears;
 
 	public void setUp(){
-		gear.setUp(true);
-		gear.setDown(false);
-		gear.setMoving(false);
+		for(int i=0; i<gears.size(); i++){
+			gears.get(i).setDown(false);
+			gears.get(i).setUp(true);
+			gears.get(i).setMoving(false);
+		}
 	}
 	
 	public void setMoving(){
-		gear.setUp(false);
-		gear.setDown(true);
-		gear.setMoving(false);
+		for(int i=0; i<gears.size(); i++){
+			gears.get(i).setDown(false);
+			gears.get(i).setUp(false);
+			gears.get(i).setMoving(true);
+		}
 	}
 	
 	public void setDown(){
-		gear.setUp(false);
-		gear.setDown(true);
-		gear.setMoving(false);
+		for(int i=0; i<gears.size(); i++){
+			gears.get(i).setDown(true);
+			gears.get(i).setUp(false);
+			gears.get(i).setMoving(false);
+		}
 	}
 }
