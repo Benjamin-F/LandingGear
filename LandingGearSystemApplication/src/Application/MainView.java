@@ -15,6 +15,7 @@ public class MainView extends Application {
 	public void start(Stage primaryStage) {
 		
         primaryStage.setTitle("Landing Gear System");
+        primaryStage.setResizable(false);
         
 		try {
             FXMLLoader loader = new FXMLLoader();

@@ -31,10 +31,31 @@ public class ViewController {
     private Button down_button;
 	
 	@FXML
-	private ImageView gears_handler_up_down;
+	private ImageView gears_handler_state;
 	
 	@FXML
     private ImageView gear_usage_state;
+	
+	@FXML
+    private ImageView gear_state_1;
+	
+	@FXML
+    private ImageView gear_state_2;
+	
+	@FXML
+    private ImageView gear_state_3;
+	
+	@FXML
+    private ImageView door_state_1;
+	
+	@FXML
+    private ImageView door_state_2;
+	
+	@FXML
+    private ImageView door_state_3;
+	
+	private ImageView[] gear_state;
+	private ImageView[] door_state;
     
 	public ViewController(){
 		
@@ -44,20 +65,94 @@ public class ViewController {
     private void initialize() {
 		up_button.setOnAction(this::handleUpButtonAction);
 		down_button.setOnAction(this::handleDownButtonAction);
+		
+		this.gear_state = new ImageView[]{this.gear_state_1,this.gear_state_2,this.gear_state_3};
+		this.door_state = new ImageView[]{this.door_state_1,this.door_state_2,this.door_state_3};
     }
 	
 	@FXML
 	private void handleUpButtonAction(ActionEvent event) {
-		gears_handler_up_down.setRotate(180);
 		
-		gear_usage_state.setImage(new Image(getClass()
-				.getResourceAsStream(FEU_ORANGE)));
 	}
 	
 	@FXML
 	private void handleDownButtonAction(ActionEvent event) {
-		gears_handler_up_down.setRotate(0);
-		gear_usage_state.setImage(new Image(getClass()
-				.getResourceAsStream(FEU_VERT)));
+		
+	}
+	
+	/*
+	 * True if up, false if down
+	 */
+	public void setHandleState(boolean up){
+		if(up){
+			gears_handler_state.setRotate(180);
+		}
+		else{
+			gears_handler_state.setRotate(0);
+		}
+	}
+	
+	/*
+	 * state : green, orange, red
+	 */
+	public void setFeuState(String state){
+		switch(state){
+		case "green":
+			gear_usage_state.setImage(new Image(getClass()
+					.getResourceAsStream(FEU_VERT)));
+			break;
+		case "orange":
+			gear_usage_state.setImage(new Image(getClass()
+					.getResourceAsStream(FEU_ORANGE)));
+			break;
+		default:
+			gear_usage_state.setImage(new Image(getClass()
+					.getResourceAsStream(FEU_ROUGE)));
+		}
+	}
+	
+	/*
+	 * id : [1-3]
+	 * state : extracted, moving, retracted
+	 */
+	public void setGearState(int id, String state){
+		switch(state){
+		case "extracted":
+				this.gear_state[id-1].setImage(new Image(getClass()
+						.getResourceAsStream(GEAR_EXTRACTED)));
+			break;
+		case "moving":
+			this.gear_state[id-1].setImage(new Image(getClass()
+					.getResourceAsStream(GEAR_MOVING)));
+			break;
+		case "retracted":
+			this.gear_state[id-1].setImage(new Image(getClass()
+					.getResourceAsStream(GEAR_RETRACTED)));
+		break;
+		}
+	}
+	
+	/*
+	 * id : [1-3]
+	 * state : opened, moving, closed
+	 */
+	public void setDoorState(int id, String state){
+		switch(state){
+		case "opened":
+				this.door_state[id-1].setImage(new Image(getClass()
+						.getResourceAsStream(DOOR_OPENED)));
+			break;
+		case "moving":
+			this.door_state[id-1].setImage(new Image(getClass()
+					.getResourceAsStream(DOOR_MOVING)));
+			break;
+		case "closed":
+			this.door_state[id-1].setImage(new Image(getClass()
+					.getResourceAsStream(DOOR_CLOSED)));
+		break;
+		}
 	}
 }
+
+
+
