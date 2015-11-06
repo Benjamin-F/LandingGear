@@ -27,6 +27,7 @@ Indeed, our project is small and can easily be splitted into small functionnal p
 
 ### II. Diagrams
 #### Class Diagram
+<img src="/Diagrams/ClassDiagram.png" alt="alt text" width="1200" height="600">
 #### State Machine
 <img src="/Diagrams/StateMachine.png" alt="alt text" width="400" height="600">
 #### Activity Diagram
