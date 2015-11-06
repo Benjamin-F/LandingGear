@@ -3,6 +3,7 @@
  *******************************************************************************/
 package Application.GearSystem;
 
+import Application.ViewController;
 import Application.GearSystem.Sensor;
 // Start of user code (user defined imports)
 
@@ -16,7 +17,19 @@ import Application.GearSystem.Sensor;
 public class GearSensor extends Sensor {
 	
 	public void run(){
-		//Test en continu
+		while(true){
+			try {
+				viewController.setFeuState("orange");
+				Thread.sleep(1000);
+				viewController.setFeuState("red");
+				Thread.sleep(1000);
+				viewController.setFeuState("green");
+				Thread.sleep(1000);
+				
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	//Gear
@@ -31,14 +44,13 @@ public class GearSensor extends Sensor {
 	/**
 	 * The constructor.
 	 */
-	public GearSensor() {
-
-		super();
+	public GearSensor(ViewController viewController, Gear gear) {
+		super(viewController);
 		isGearUp = true;
 		isGearMoving = false;		
 		isGearDown = false;
 		
-		gear = new Gear();
+		this.gear = gear;
 	}
 
 	/**

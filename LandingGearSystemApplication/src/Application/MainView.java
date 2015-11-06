@@ -40,6 +40,7 @@ public class MainView extends Application {
         }
 		
 		boardComputer.setViewController(viewController);
+		boardComputer.init();
 	}
 
 

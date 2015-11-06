@@ -19,16 +19,18 @@ public class Door {
 	private boolean moving;
 	private boolean closed;
 	
+	private int id;
+	
 	/**
 	 * The constructor.
 	 */
-	public Door() {
-		// Start of user code constructor for Door)
+	public Door(int id) {
 		super();
 		open = false;
 		moving = false;
 		closed = true;
-		// End of user code
+		
+		this.id = id;
 	}
 
 	public boolean isOpen() {
@@ -54,4 +56,9 @@ public class Door {
 	public void setClosed(boolean closed) {
 		this.closed = closed;
 	}
+	
+	public int getId(){
+		return id;
+	}
+
 }

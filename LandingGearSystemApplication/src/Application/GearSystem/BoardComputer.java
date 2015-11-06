@@ -41,24 +41,23 @@ public class BoardComputer {
 	 */
 	public BoardComputer() {
 		super();
-		
+	}
+	
+	public void init(){
 		GearSensor tmpGearSensor = null;
 		DoorSensor tmpDoorSensor = null;
 		Door tmpDoor = null;
 		Gear tmpGear = null;
 
 		for(int i=0; i<3; i++){
-			tmpDoor = new Door();
-			tmpGear = new Gear();
+			tmpDoor = new Door(i);
+			tmpGear = new Gear(i);
 			
 			doors.add(tmpDoor);
 			gears.add(tmpGear);
 			
-			tmpDoorSensor = new DoorSensor();
-			tmpDoorSensor.setDoor(tmpDoor);
-			
-			tmpGearSensor = new GearSensor();
-			tmpGearSensor.setGear(tmpGear);
+			tmpDoorSensor = new DoorSensor(viewController,tmpDoor);
+			tmpGearSensor = new GearSensor(viewController,tmpGear);
 			
 			doorSensors.add(tmpDoorSensor);
 			gearSensors.add(tmpGearSensor);

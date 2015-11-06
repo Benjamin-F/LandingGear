@@ -18,6 +18,8 @@ public class Gear {
 	private boolean moving;
 	private boolean down;
 	
+	private int id;
+	
 	public boolean isUp() {
 		return up;
 	}
@@ -41,17 +43,21 @@ public class Gear {
 	public void setDown(boolean down) {
 		this.down = down;
 	}
+	
+	public int getId(){
+		return id;
+	}
 
 	
 	/**
 	 * The constructor.
 	 */
-	public Gear() {
-		// Start of user code constructor for Gear)
+	public Gear(int id) {
 		super();
 		up = true;
 		moving = false;
 		down = false;
-		// End of user code
+		
+		this.id = id;
 	}
 }

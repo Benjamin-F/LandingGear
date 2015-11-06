@@ -3,6 +3,7 @@
  *******************************************************************************/
 package Application.GearSystem;
 
+import Application.ViewController;
 import Application.GearSystem.Sensor;
 // Start of user code (user defined imports)
 
@@ -31,14 +32,14 @@ public class DoorSensor extends Sensor {
 	/**
 	 * The constructor.
 	 */
-	public DoorSensor() {
+	public DoorSensor(ViewController viewController, Door door) {
 		
-		super();
+		super(viewController);
 		isDoorOpen = false;
 		isDoorMoving = false;
 		isDoorClosed = true;
 	
-		door = new Door();
+		this.door = door;
 	}
 
 	

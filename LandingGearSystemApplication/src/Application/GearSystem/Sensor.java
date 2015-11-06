@@ -3,6 +3,8 @@
  *******************************************************************************/
 package Application.GearSystem;
 
+import Application.ViewController;
+
 // Start of user code (user defined imports)
 
 // End of user code
@@ -19,17 +21,15 @@ public abstract class Sensor extends Thread{
 	 */
 	public BoardComputer boardComputers = null;
 
-	// Start of user code (user defined attributes for Sensor)
-
-	// End of user code
+	protected ViewController viewController = null;
 
 	/**
 	 * The constructor.
 	 */
-	public Sensor() {
-		// Start of user code constructor for Sensor)
+	public Sensor(ViewController viewController) {
 		super();
-		// End of user code
+		
+		this.viewController = viewController;
 	}
 
 	// Start of user code (user defined methods for Sensor)
