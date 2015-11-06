@@ -1,5 +1,5 @@
 # The Landing Gear Sytem
-### Wich project life cycle ?
+### I. Wich project life cycle ?
 
 Before to choose wich methods we will use, we must define them.
 
@@ -23,5 +23,13 @@ But, the planning of all the small projects can be hard and a lack of motivation
 Considering these three methods, we chose the Agile life cycle.
 Indeed, our project is small and can easily be splitted into small functionnal parts. As we are only two per team, this will help us to do parrellel development each one developing a set of pieces to finally gather them all. Moreover, Agile method is 'perfect' to answer to changes.
 
+==========
+
+### II. Diagrams
+Please, find in this repository the following diagrams:
+-Use case
+-Class
+-Activity
+-State Machien
 
 
