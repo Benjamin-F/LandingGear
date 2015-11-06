@@ -19,10 +19,10 @@ public class GeneralElectrovalve extends Electrovalve {
 	/**
 	 * Description of the property gearElectrovalves.
 	 */
-	private DoorElectrovalve OpenDoorsElectrovalve = null;
-	private DoorElectrovalve CloseDoorsElectrovalve = null;
-	private GearElectrovalve OpenGearsElectrovalve = null;
-	private GearElectrovalve ClodeGearsElectrovalve = null;
+	private DoorElectrovalve openDoorsElectrovalve = null;
+	private DoorElectrovalve closeDoorsElectrovalve = null;
+	private GearElectrovalve openGearsElectrovalve = null;
+	private GearElectrovalve clodeGearsElectrovalve = null;
 
 	/**
 	 * The constructor.
@@ -31,37 +31,38 @@ public class GeneralElectrovalve extends Electrovalve {
 		super();
 	}
 
+	/**
+	 * Getter and Setter
+	 */
 	public DoorElectrovalve getOpenDoorsElectrovalve() {
-		return OpenDoorsElectrovalve;
+		return openDoorsElectrovalve;
 	}
 
 	public void setOpenDoorsElectrovalve(DoorElectrovalve openDoorsElectrovalve) {
-		OpenDoorsElectrovalve = openDoorsElectrovalve;
+		this.openDoorsElectrovalve = openDoorsElectrovalve;
 	}
 
 	public DoorElectrovalve getCloseDoorsElectrovalve() {
-		return CloseDoorsElectrovalve;
+		return closeDoorsElectrovalve;
 	}
 
 	public void setCloseDoorsElectrovalve(DoorElectrovalve closeDoorsElectrovalve) {
-		CloseDoorsElectrovalve = closeDoorsElectrovalve;
+		this.closeDoorsElectrovalve = closeDoorsElectrovalve;
 	}
 
 	public GearElectrovalve getOpenGearsElectrovalve() {
-		return OpenGearsElectrovalve;
+		return openGearsElectrovalve;
 	}
 
 	public void setOpenGearsElectrovalve(GearElectrovalve openGearsElectrovalve) {
-		OpenGearsElectrovalve = openGearsElectrovalve;
+		this.openGearsElectrovalve = openGearsElectrovalve;
 	}
 
 	public GearElectrovalve getClodeGearsElectrovalve() {
-		return ClodeGearsElectrovalve;
+		return clodeGearsElectrovalve;
 	}
 
 	public void setClodeGearsElectrovalve(GearElectrovalve clodeGearsElectrovalve) {
-		ClodeGearsElectrovalve = clodeGearsElectrovalve;
+		this.clodeGearsElectrovalve = clodeGearsElectrovalve;
 	}
-
-
 }

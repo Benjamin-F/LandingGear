@@ -4,7 +4,6 @@
 package Application.GearSystem;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
 import Application.ViewController;
 
@@ -23,10 +22,11 @@ public class BoardComputer {
 	 */
 	public ViewController viewController = null;
 
-	private DoorElectrovalve OpenDoorsElectrovalve = null;
-	private DoorElectrovalve CloseDoorsElectrovalve = null;
-	private GearElectrovalve OpenGearsElectrovalve = null;
-	private GearElectrovalve ClodeGearsElectrovalve = null;
+	private DoorElectrovalve openDoorsElectrovalve = null;
+	private DoorElectrovalve closeDoorsElectrovalve = null;
+	private GearElectrovalve openGearsElectrovalve = null;
+	private GearElectrovalve clodeGearsElectrovalve = null;
+	private GeneralElectrovalve generalElectroval = null;
 
 	private ArrayList<Sensor> doorSensors = new ArrayList<Sensor>();
 	private ArrayList<Sensor> gearSensors = new ArrayList<Sensor>();
@@ -48,10 +48,10 @@ public class BoardComputer {
 		Door tmpDoor = null;
 		Gear tmpGear = null;
 		
-		OpenDoorsElectrovalve = new DoorElectrovalve();
-		CloseDoorsElectrovalve = new DoorElectrovalve();
-		OpenGearsElectrovalve = new GearElectrovalve();
-		ClodeGearsElectrovalve = new GearElectrovalve();
+		openDoorsElectrovalve = new DoorElectrovalve();
+		closeDoorsElectrovalve = new DoorElectrovalve();
+		openGearsElectrovalve = new GearElectrovalve();
+		clodeGearsElectrovalve = new GearElectrovalve();
 
 		for(int i=0; i<3; i++){
 			tmpDoor = new Door(i);
@@ -70,10 +70,10 @@ public class BoardComputer {
 			tmpGearSensor.start();
 		}
 		
-		OpenDoorsElectrovalve.doors = doors;
-		CloseDoorsElectrovalve.doors = doors;
-		OpenGearsElectrovalve.gears = gears;
-		ClodeGearsElectrovalve.gears = gears;
+		openDoorsElectrovalve.doors = doors;
+		closeDoorsElectrovalve.doors = doors;
+		openGearsElectrovalve.gears = gears;
+		clodeGearsElectrovalve.gears = gears;
 		
 	}
 
