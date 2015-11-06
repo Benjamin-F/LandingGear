@@ -26,10 +26,13 @@ Indeed, our project is small and can easily be splitted into small functionnal p
 ==========
 
 ### II. Diagrams
-Please, find in this repository the following diagrams:
-- Use case
-- Class
-- Activity
-- State Machine
+#### Class Diagram
+#### State Machine
+<img src="/Diagrams/StateMachine.png" alt="alt text" width="400" height="600">
+#### Activity Diagram
+<img src="/Diagrams/ActivityDiagram.png" alt="alt text" width="600" height="600">
+#### Use case
+<img src="/Diagrams/UseCase.png" alt="alt text" width="400" height="300">
+
 
 
