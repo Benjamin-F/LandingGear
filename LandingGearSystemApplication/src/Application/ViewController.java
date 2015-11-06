@@ -115,7 +115,7 @@ public class ViewController {
 	}
 	
 	/*
-	 * id : [1-3]
+	 * id : [0-2]
 	 * state : extracted, moving, retracted
 	 */
 	public void setGearState(int id, String state){
@@ -136,7 +136,7 @@ public class ViewController {
 	}
 	
 	/*
-	 * id : [1-3]
+	 * id : [0-2]
 	 * state : opened, moving, closed
 	 */
 	public void setDoorState(int id, String state){
