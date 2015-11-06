@@ -16,7 +16,7 @@ import Application.View.ViewController;
  * 
  * @author lemee
  */
-public class BoardComputer{
+public class BoardComputer extends Thread{
 	/**
 	 * Description of the property viewController.
 	 */
@@ -36,14 +36,33 @@ public class BoardComputer{
 	
 	private String request = null;
 	private String currentRequest = null;
-	
-	private BoardComputerThread boardComputerThread = null;
 
 	/**
 	 * The constructor.
 	 */
 	public BoardComputer() {
 		super();
+	}
+	
+	@Override
+	public void run(){
+		while(true){
+			try { request = "test";
+				if(!request.isEmpty()){
+					currentRequest = request;
+					request = null;
+					
+					Thread.sleep(3000);
+					openDoorsElectrovalve.setMoving();
+					Thread.sleep(3000);
+					openDoorsElectrovalve.setOpen();
+					
+				}
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	public void init(){
@@ -85,11 +104,6 @@ public class BoardComputer{
 		generalElectroval.setOpenDoorsElectrovalve(openDoorsElectrovalve);
 		generalElectroval.setOpenGearsElectrovalve(openGearsElectrovalve);
 		
-		openDoorsElectrovalve.setMoving();
-		
-		boardComputerThread = new BoardComputerThread();
-		boardComputerThread.setBoardComputer(this);
-		//boardComputerThread.start();
 	}
 
 	// Start of user code (user defined methods for BoardComputer)
@@ -156,13 +170,5 @@ public class BoardComputer{
 
 	public void setCloseGearsElectrovalve(GearElectrovalve closeGearsElectrovalve) {
 		this.closeGearsElectrovalve = closeGearsElectrovalve;
-	}
-
-	public BoardComputerThread getBoardComputerThread() {
-		return boardComputerThread;
-	}
-
-	public void setBoardComputerThread(BoardComputerThread boardComputerThread) {
-		this.boardComputerThread = boardComputerThread;
 	}
 }

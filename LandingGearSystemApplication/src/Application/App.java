@@ -43,6 +43,7 @@ public class App extends Application {
 		
 		boardComputer.setViewController(viewController);
 		boardComputer.init();
+		boardComputer.start();
 	}
 
 	@Override
