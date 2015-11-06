@@ -3,6 +3,7 @@
  *******************************************************************************/
 package Application.GearSystem;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 import Application.ViewController;
@@ -28,22 +29,43 @@ public class BoardComputer {
 	 */
 	public HashSet<Electrovalve> electrovalves = new HashSet<Electrovalve>();
 
-	/**
-	 * Description of the property sensors.
-	 */
-	public HashSet<Sensor> sensors = new HashSet<Sensor>();
-
-	// Start of user code (user defined attributes for BoardComputer)
-
-	// End of user code
+	
+	public ArrayList<Sensor> doorSensors = new ArrayList<Sensor>();
+	public ArrayList<Sensor> gearSensors = new ArrayList<Sensor>();
+	
+	public ArrayList<Door> doors = new ArrayList<Door>();
+	public ArrayList<Gear> gears = new ArrayList<Gear>();
 
 	/**
 	 * The constructor.
 	 */
 	public BoardComputer() {
-		// Start of user code constructor for BoardComputer)
 		super();
-		// End of user code
+		
+		GearSensor tmpGearSensor = null;
+		DoorSensor tmpDoorSensor = null;
+		Door tmpDoor = null;
+		Gear tmpGear = null;
+
+		for(int i=0; i<3; i++){
+			tmpDoor = new Door();
+			tmpGear = new Gear();
+			
+			doors.add(tmpDoor);
+			gears.add(tmpGear);
+			
+			tmpDoorSensor = new DoorSensor();
+			tmpDoorSensor.setDoor(tmpDoor);
+			
+			tmpGearSensor = new GearSensor();
+			tmpGearSensor.setGear(tmpGear);
+			
+			doorSensors.add(tmpDoorSensor);
+			gearSensors.add(tmpGearSensor);
+			
+			tmpDoorSensor.start();
+			tmpGearSensor.start();
+		}
 	}
 
 	// Start of user code (user defined methods for BoardComputer)
@@ -73,16 +95,12 @@ public class BoardComputer {
 		return this.electrovalves;
 	}
 
-	/**
-	 * Returns sensors.
-	 * @return sensors 
-	 */
-	public HashSet<Sensor> getSensors() {
-		return this.sensors;
-	}
-
 	public void set(Object object) {
 		// TODO Auto-generated method stub
+		
+	}
+	
+	public void pushDown(){
 		
 	}
 

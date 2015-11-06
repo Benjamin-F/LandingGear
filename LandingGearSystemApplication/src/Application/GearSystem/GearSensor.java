@@ -15,6 +15,10 @@ import Application.GearSystem.Sensor;
  */
 public class GearSensor extends Sensor {
 	
+	public void run(){
+		//Test en continu
+	}
+
 	//Gear
 	private Gear gear = null;
 	
@@ -41,7 +45,7 @@ public class GearSensor extends Sensor {
 	 * Returns gears.
 	 * @return gears 
 	 */
-	public Gear getGears() {
+	public Gear getGear() {
 		return this.gear;
 	}
 
@@ -49,7 +53,7 @@ public class GearSensor extends Sensor {
 	 * Sets a value to attribute gears. 
 	 * @param newGears 
 	 */
-	public void setGears(Gear newGears) {
+	public void setGear(Gear newGears) {
 		this.gear = newGears;
 	}
 	

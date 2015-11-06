@@ -36,7 +36,7 @@ public class GearElectrovalve extends Electrovalve {
 			gears.get(i).setMoving(true);
 		}
 	}
-	
+
 	public void setDown(){
 		for(int i=0; i<gears.size(); i++){
 			gears.get(i).setDown(true);

@@ -12,7 +12,8 @@ package Application.GearSystem;
  * 
  * @author lemee
  */
-public class Sensor {
+public abstract class Sensor extends Thread{
+	
 	/**
 	 * Description of the property boardComputers.
 	 */

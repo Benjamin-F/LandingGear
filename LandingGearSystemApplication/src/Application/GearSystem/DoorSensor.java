@@ -15,6 +15,10 @@ import Application.GearSystem.Sensor;
  */
 public class DoorSensor extends Sensor {
 	
+	public void run(){
+		//Test en continu
+	}
+	
 	//Door
 	private Door door = null;
 	
@@ -42,7 +46,7 @@ public class DoorSensor extends Sensor {
 	 * Returns doors.
 	 * @return doors 
 	 */
-	public Door getDoors() {
+	public Door getDoor() {
 		return this.door;
 	}
 
@@ -50,7 +54,7 @@ public class DoorSensor extends Sensor {
 	 * Sets a value to attribute doors. 
 	 * @param newDoors 
 	 */
-	public void setDoors(Door newDoors) {
+	public void setDoor(Door newDoors) {
 		this.door = newDoors;
 	}
 	
