@@ -20,7 +20,7 @@
             </Label>
             <Button fx:id="up_button" layoutX="58.0" layoutY="51.0" mnemonicParsing="false" onAction="#handleUpButtonAction" text="UP" />
             <Button fx:id="down_button" layoutX="50.0" layoutY="107.0" mnemonicParsing="false" text="Down" />
-            <ImageView fx:id="gears_handler_state" fitHeight="126.0" fitWidth="142.0" layoutX="199.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="gears_handler_state" fitHeight="126.0" fitWidth="142.0" layoutX="199.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
                <image>
                   <Image url="@../Images/upDownGear.png" />
                </image>

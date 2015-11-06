@@ -17,6 +17,7 @@ import javafx.application.Platform;
  */
 public class DoorSensor extends Sensor {
 	
+	@Override
 	public void run(){
 		while(true){
 			try {

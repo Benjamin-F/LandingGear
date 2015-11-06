@@ -20,7 +20,7 @@ public class GeneralElectrovalve extends Electrovalve {
 	private DoorElectrovalve openDoorsElectrovalve = null;
 	private DoorElectrovalve closeDoorsElectrovalve = null;
 	private GearElectrovalve openGearsElectrovalve = null;
-	private GearElectrovalve clodeGearsElectrovalve = null;
+	private GearElectrovalve closeGearsElectrovalve = null;
 
 	/**
 	 * The constructor.
@@ -56,11 +56,11 @@ public class GeneralElectrovalve extends Electrovalve {
 		this.openGearsElectrovalve = openGearsElectrovalve;
 	}
 
-	public GearElectrovalve getClodeGearsElectrovalve() {
-		return clodeGearsElectrovalve;
+	public GearElectrovalve getCloseGearsElectrovalve() {
+		return closeGearsElectrovalve;
 	}
 
-	public void setClodeGearsElectrovalve(GearElectrovalve clodeGearsElectrovalve) {
-		this.clodeGearsElectrovalve = clodeGearsElectrovalve;
+	public void setCloseGearsElectrovalve(GearElectrovalve closeGearsElectrovalve) {
+		this.closeGearsElectrovalve = closeGearsElectrovalve;
 	}
 }

@@ -16,7 +16,7 @@ import Application.View.ViewController;
  * 
  * @author lemee
  */
-public class BoardComputer {
+public class BoardComputer{
 	/**
 	 * Description of the property viewController.
 	 */
@@ -25,7 +25,7 @@ public class BoardComputer {
 	private DoorElectrovalve openDoorsElectrovalve = null;
 	private DoorElectrovalve closeDoorsElectrovalve = null;
 	private GearElectrovalve openGearsElectrovalve = null;
-	private GearElectrovalve clodeGearsElectrovalve = null;
+	private GearElectrovalve closeGearsElectrovalve = null;
 	private GeneralElectrovalve generalElectroval = null;
 
 	private ArrayList<Sensor> doorSensors = new ArrayList<Sensor>();
@@ -34,6 +34,10 @@ public class BoardComputer {
 	private ArrayList<Door> doors = new ArrayList<Door>();
 	private ArrayList<Gear> gears = new ArrayList<Gear>();
 	
+	private String request = null;
+	private String currentRequest = null;
+	
+	private BoardComputerThread boardComputerThread = null;
 
 	/**
 	 * The constructor.
@@ -51,7 +55,8 @@ public class BoardComputer {
 		openDoorsElectrovalve = new DoorElectrovalve();
 		closeDoorsElectrovalve = new DoorElectrovalve();
 		openGearsElectrovalve = new GearElectrovalve();
-		clodeGearsElectrovalve = new GearElectrovalve();
+		closeGearsElectrovalve = new GearElectrovalve();
+		generalElectroval = new GeneralElectrovalve();
 
 		for(int i=0; i<3; i++){
 			tmpDoor = new Door(i);
@@ -73,8 +78,18 @@ public class BoardComputer {
 		openDoorsElectrovalve.doors = doors;
 		closeDoorsElectrovalve.doors = doors;
 		openGearsElectrovalve.gears = gears;
-		clodeGearsElectrovalve.gears = gears;
+		closeGearsElectrovalve.gears = gears;
 		
+		generalElectroval.setCloseGearsElectrovalve(closeGearsElectrovalve);
+		generalElectroval.setCloseDoorsElectrovalve(closeDoorsElectrovalve);
+		generalElectroval.setOpenDoorsElectrovalve(openDoorsElectrovalve);
+		generalElectroval.setOpenGearsElectrovalve(openGearsElectrovalve);
+		
+		openDoorsElectrovalve.setMoving();
+		
+		boardComputerThread = new BoardComputerThread();
+		boardComputerThread.setBoardComputer(this);
+		//boardComputerThread.start();
 	}
 
 	// Start of user code (user defined methods for BoardComputer)
@@ -89,10 +104,65 @@ public class BoardComputer {
 	}
 
 	/**
-	 * Sets a value to attribute gearUsageStates. 
-	 * @param newGearUsageStates 
+	 * Getter and Setter
 	 */
 	public void setViewController(ViewController newViewController) {
 		this.viewController = newViewController;
+	}
+
+	public String getRequest() {
+		return request;
+	}
+
+	public void setRequest(String request) {
+		this.request = request;
+	}
+
+	public String getCurrentRequest() {
+		return currentRequest;
+	}
+
+	public void setCurrentRequest(String currentRequest) {
+		this.currentRequest = currentRequest;
+	}
+	
+	public DoorElectrovalve getOpenDoorsElectrovalve() {
+		return openDoorsElectrovalve;
+	}
+
+	public void setOpenDoorsElectrovalve(DoorElectrovalve openDoorsElectrovalve) {
+		this.openDoorsElectrovalve = openDoorsElectrovalve;
+	}
+
+	public DoorElectrovalve getCloseDoorsElectrovalve() {
+		return closeDoorsElectrovalve;
+	}
+
+	public void setCloseDoorsElectrovalve(DoorElectrovalve closeDoorsElectrovalve) {
+		this.closeDoorsElectrovalve = closeDoorsElectrovalve;
+	}
+
+	public GearElectrovalve getOpenGearsElectrovalve() {
+		return openGearsElectrovalve;
+	}
+
+	public void setOpenGearsElectrovalve(GearElectrovalve openGearsElectrovalve) {
+		this.openGearsElectrovalve = openGearsElectrovalve;
+	}
+
+	public GearElectrovalve getCloseGearsElectrovalve() {
+		return closeGearsElectrovalve;
+	}
+
+	public void setCloseGearsElectrovalve(GearElectrovalve closeGearsElectrovalve) {
+		this.closeGearsElectrovalve = closeGearsElectrovalve;
+	}
+
+	public BoardComputerThread getBoardComputerThread() {
+		return boardComputerThread;
+	}
+
+	public void setBoardComputerThread(BoardComputerThread boardComputerThread) {
+		this.boardComputerThread = boardComputerThread;
 	}
 }

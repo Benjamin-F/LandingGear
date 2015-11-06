@@ -17,6 +17,7 @@ import javafx.application.Platform;
  */
 public class GearSensor extends Sensor {
 	
+	@Override
 	public void run(){
 		while(true){
 			try {
