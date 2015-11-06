@@ -3,8 +3,8 @@
  *******************************************************************************/
 package Application.GearSystem;
 
-import Application.ViewController;
 import Application.GearSystem.Sensor;
+import Application.View.ViewController;
 // Start of user code (user defined imports)
 import javafx.application.Platform;
 

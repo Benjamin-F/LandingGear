@@ -22,7 +22,7 @@
             <Button fx:id="down_button" layoutX="50.0" layoutY="107.0" mnemonicParsing="false" text="Down" />
             <ImageView fx:id="gears_handler_state" fitHeight="126.0" fitWidth="142.0" layoutX="199.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/upDownGear.png" />
+                  <Image url="@../Images/upDownGear.png" />
                </image>
             </ImageView>
             <Label layoutX="14.0" layoutY="172.0" text="Gear Usage State">
@@ -32,7 +32,7 @@
             </Label>
             <ImageView fx:id="gear_usage_state" fitHeight="80.0" fitWidth="322.0" layoutX="15.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/feu_vert.jpg" />
+                  <Image url="@../Images/feu_vert.jpg" />
                </image>
             </ImageView>
             <Label layoutX="14.0" layoutY="321.0" text="Gears State Control">
@@ -42,17 +42,17 @@
             </Label>
             <ImageView fx:id="gear_state_1" fitHeight="107.0" fitWidth="131.0" layoutX="20.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/gear2_retracted.jpg" />
+                  <Image url="@../Images/gear2_retracted.jpg" />
                </image>
             </ImageView>
             <ImageView fx:id="gear_state_2" fitHeight="107.0" fitWidth="131.0" layoutX="151.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/gear2_retracted.jpg" />
+                  <Image url="@../Images/gear2_retracted.jpg" />
                </image>
             </ImageView>
             <ImageView fx:id="gear_state_3" fitHeight="107.0" fitWidth="131.0" layoutX="278.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/gear2_retracted.jpg" />
+                  <Image url="@../Images/gear2_retracted.jpg" />
                </image>
             </ImageView>
             <Label layoutX="20.0" layoutY="466.0" text="Doors State Control">
@@ -62,17 +62,17 @@
             </Label>
             <ImageView fx:id="door_state_3" fitHeight="107.0" fitWidth="131.0" layoutX="280.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/door2_closed.jpg" />
+                  <Image url="@../Images/door2_closed.jpg" />
                </image>
             </ImageView>
             <ImageView fx:id="door_state_2" fitHeight="107.0" fitWidth="131.0" layoutX="153.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/door2_closed.jpg" />
+                  <Image url="@../Images/door2_closed.jpg" />
                </image>
             </ImageView>
             <ImageView fx:id="door_state_1" fitHeight="107.0" fitWidth="131.0" layoutX="22.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/door2_closed.jpg" />
+                  <Image url="@../Images/door2_closed.jpg" />
                </image>
             </ImageView>
          </children>

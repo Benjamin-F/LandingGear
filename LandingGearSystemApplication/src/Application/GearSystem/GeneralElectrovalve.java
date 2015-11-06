@@ -3,8 +3,6 @@
  *******************************************************************************/
 package Application.GearSystem;
 
-import java.util.HashSet;
-
 import Application.GearSystem.Electrovalve;
 // Start of user code (user defined imports)
 

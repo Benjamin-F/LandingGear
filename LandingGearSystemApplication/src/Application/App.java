@@ -3,6 +3,7 @@ package Application;
 import java.io.IOException;
 
 import Application.GearSystem.BoardComputer;
+import Application.View.ViewController;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class MainView extends Application {
+public class App extends Application {
 
 	private ViewController viewController = null;
 	private BoardComputer boardComputer = null;
@@ -26,7 +27,7 @@ public class MainView extends Application {
         
 		try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("View.fxml"));
+            loader.setLocation(getClass().getResource("View/View.fxml"));
             
             loader.setController(viewController);
             

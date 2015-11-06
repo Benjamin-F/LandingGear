@@ -5,7 +5,7 @@ package Application.GearSystem;
 
 import java.util.ArrayList;
 
-import Application.ViewController;
+import Application.View.ViewController;
 
 // Start of user code (user defined imports)
 
