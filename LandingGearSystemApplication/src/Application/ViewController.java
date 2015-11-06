@@ -1,5 +1,6 @@
 package Application;
 
+import Application.GearSystem.BoardComputer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -56,9 +57,11 @@ public class ViewController {
 	
 	private ImageView[] gear_state;
 	private ImageView[] door_state;
+	
+	private BoardComputer boardComputer = null;
     
-	public ViewController(){
-		
+	public ViewController(BoardComputer boardComputer){
+		this.boardComputer = boardComputer;
 	}
 	
 	@FXML

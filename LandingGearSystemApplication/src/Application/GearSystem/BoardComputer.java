@@ -56,7 +56,15 @@ public class BoardComputer {
 	public ViewController getViewController() {
 		return this.viewController;
 	}
-	
+
+	/**
+	 * Sets a value to attribute gearUsageStates. 
+	 * @param newGearUsageStates 
+	 */
+	public void setViewController(ViewController newViewController) {
+		this.viewController = newViewController;
+	}
+
 	/**
 	 * Returns electrovalves.
 	 * @return electrovalves 
