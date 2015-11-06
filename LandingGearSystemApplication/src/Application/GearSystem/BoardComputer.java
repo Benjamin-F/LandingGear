@@ -5,6 +5,8 @@ package Application.GearSystem;
 
 import java.util.HashSet;
 
+import Application.ViewController;
+
 // Start of user code (user defined imports)
 
 // End of user code
@@ -16,14 +18,10 @@ import java.util.HashSet;
  */
 public class BoardComputer {
 	/**
-	 * Description of the property gearUsageStates.
+	 * Description of the property viewController.
 	 */
-	public GearUsageState gearUsageStates = null;
+	public ViewController viewController = null;
 
-	/**
-	 * Description of the property handles.
-	 */
-	public Handle handles = null;
 
 	/**
 	 * Description of the property electrovalves.
@@ -55,40 +53,10 @@ public class BoardComputer {
 	 * Returns gearUsageStates.
 	 * @return gearUsageStates 
 	 */
-	public GearUsageState getGearUsageStates() {
-		return this.gearUsageStates;
+	public ViewController getViewController() {
+		return this.viewController;
 	}
-
-	/**
-	 * Sets a value to attribute gearUsageStates. 
-	 * @param newGearUsageStates 
-	 */
-	public void setGearUsageStates(GearUsageState newGearUsageStates) {
-		if (this.gearUsageStates != null) {
-			this.gearUsageStates.set(null);
-		}
-		this.gearUsageStates.set(this);
-	}
-
-	/**
-	 * Returns handles.
-	 * @return handles 
-	 */
-	public Handle getHandles() {
-		return this.handles;
-	}
-
-	/**
-	 * Sets a value to attribute handles. 
-	 * @param newHandles 
-	 */
-	public void setHandles(Handle newHandles) {
-		if (this.handles != null) {
-			this.handles.set(null);
-		}
-		this.handles.set(this);
-	}
-
+	
 	/**
 	 * Returns electrovalves.
 	 * @return electrovalves 
@@ -103,6 +71,11 @@ public class BoardComputer {
 	 */
 	public HashSet<Sensor> getSensors() {
 		return this.sensors;
+	}
+
+	public void set(Object object) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -54,4 +54,9 @@ public class GearSensor extends Sensor {
 		this.gears.set(this);
 	}
 
+	public void set(Gear gear) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

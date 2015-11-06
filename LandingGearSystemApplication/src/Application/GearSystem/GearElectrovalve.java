@@ -75,4 +75,9 @@ public class GearElectrovalve extends Electrovalve {
 		this.generalElectrovalves = newGeneralElectrovalves;
 	}
 
+	public void set(Gear gear) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -77,4 +77,9 @@ public class Gear {
 		this.gearElectrovalves.set(this);
 	}
 
+	public void set(Object object) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
