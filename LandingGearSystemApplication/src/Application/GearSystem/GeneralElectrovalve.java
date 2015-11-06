@@ -19,43 +19,49 @@ public class GeneralElectrovalve extends Electrovalve {
 	/**
 	 * Description of the property gearElectrovalves.
 	 */
-	public HashSet<GearElectrovalve> gearElectrovalves = new HashSet<GearElectrovalve>();
-
-	/**
-	 * Description of the property doorElectrovalves.
-	 */
-	public HashSet<DoorElectrovalve> doorElectrovalves = new HashSet<DoorElectrovalve>();
-
-	// Start of user code (user defined attributes for GeneralElectrovalve)
-
-	// End of user code
+	private DoorElectrovalve OpenDoorsElectrovalve = null;
+	private DoorElectrovalve CloseDoorsElectrovalve = null;
+	private GearElectrovalve OpenGearsElectrovalve = null;
+	private GearElectrovalve ClodeGearsElectrovalve = null;
 
 	/**
 	 * The constructor.
 	 */
 	public GeneralElectrovalve() {
-		// Start of user code constructor for GeneralElectrovalve)
 		super();
-		// End of user code
 	}
 
-	// Start of user code (user defined methods for GeneralElectrovalve)
-
-	// End of user code
-	/**
-	 * Returns gearElectrovalves.
-	 * @return gearElectrovalves 
-	 */
-	public HashSet<GearElectrovalve> getGearElectrovalves() {
-		return this.gearElectrovalves;
+	public DoorElectrovalve getOpenDoorsElectrovalve() {
+		return OpenDoorsElectrovalve;
 	}
 
-	/**
-	 * Returns doorElectrovalves.
-	 * @return doorElectrovalves 
-	 */
-	public HashSet<DoorElectrovalve> getDoorElectrovalves() {
-		return this.doorElectrovalves;
+	public void setOpenDoorsElectrovalve(DoorElectrovalve openDoorsElectrovalve) {
+		OpenDoorsElectrovalve = openDoorsElectrovalve;
 	}
+
+	public DoorElectrovalve getCloseDoorsElectrovalve() {
+		return CloseDoorsElectrovalve;
+	}
+
+	public void setCloseDoorsElectrovalve(DoorElectrovalve closeDoorsElectrovalve) {
+		CloseDoorsElectrovalve = closeDoorsElectrovalve;
+	}
+
+	public GearElectrovalve getOpenGearsElectrovalve() {
+		return OpenGearsElectrovalve;
+	}
+
+	public void setOpenGearsElectrovalve(GearElectrovalve openGearsElectrovalve) {
+		OpenGearsElectrovalve = openGearsElectrovalve;
+	}
+
+	public GearElectrovalve getClodeGearsElectrovalve() {
+		return ClodeGearsElectrovalve;
+	}
+
+	public void setClodeGearsElectrovalve(GearElectrovalve clodeGearsElectrovalve) {
+		ClodeGearsElectrovalve = clodeGearsElectrovalve;
+	}
+
 
 }
