@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import Application.GearSystem.BoardComputer;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -43,6 +44,11 @@ public class MainView extends Application {
 		boardComputer.init();
 	}
 
+	@Override
+	public void stop(){
+		Platform.exit();
+        System.exit(0);
+	}
 
 	public static void main(String[] args) {
 		launch(args);
