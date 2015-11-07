@@ -49,13 +49,14 @@ public class BoardComputer extends Thread{
 	public void run(){
 		while(true){
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(1500);
 				if(requestState != currentState){
 					Platform.runLater(new Runnable() {
 					    public void run() {
 					    	viewController.setFeuState("orange");
 					    }
 					});
+					generalElectroval.setActive(true);
 					
 					if(requestState < currentState){
 						currentState-=1;
@@ -99,6 +100,8 @@ public class BoardComputer extends Thread{
 					    	viewController.setFeuState("green");
 					    }
 					});
+					
+					generalElectroval.setActive(false);
 				}
 				
 			} catch (InterruptedException e) {
@@ -149,8 +152,6 @@ public class BoardComputer extends Thread{
 		closeDoorsElectrovalve.setGeneralElectroval(generalElectroval);
 		openGearsElectrovalve.setGeneralElectroval(generalElectroval);
 		closeGearsElectrovalve.setGeneralElectroval(generalElectroval);
-		
-		generalElectroval.setActive(true);
 		
 	}
 
