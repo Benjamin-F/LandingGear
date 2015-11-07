@@ -35,5 +35,13 @@ Indeed, our project is small and can easily be splitted into small functionnal p
 #### Use case
 <img src="/Diagrams/UseCase.png" alt="alt text" width="400" height="300">
 
+==========
 
+### III. Tests
+
+As this first version only expects two actions from the user and doesn't handle errors the testing procedure is quite simple.<br>
+1. Doors are closed and gears up. Move handle down and wait for the gears to go down.<br>
+2. Doors are closed and gears down. Move handle up and wait for the gears to go up.<br>
+3. Doors are closed and gears up. Move handle down and try to move it up while the gears/doors are moving. It shouldn't be allowed.<br>
+4. Doors are closed and gears down. Move handle up and try to move it down while the gears/doors are moving. It shouldn't be allowed.<br>
 
