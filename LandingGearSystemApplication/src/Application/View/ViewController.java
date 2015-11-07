@@ -79,11 +79,13 @@ public class ViewController {
 	@FXML
 	private void handleUpButtonAction(ActionEvent event) {
 		boardComputer.setRequestState(UP_STATE);
+		setHandleState(true);
 	}
 	
 	@FXML
 	private void handleDownButtonAction(ActionEvent event) {
 		boardComputer.setRequestState(DOWN_STATE);
+		setHandleState(false);
 	}
 	
 	/*
