@@ -20,29 +20,45 @@ public class DoorElectrovalve extends Electrovalve {
 	 * Description of the property doors.
 	 */
 	public ArrayList<Door> doors;
+	
+	private GeneralElectrovalve generalElectroval = null;
 
 	public void setOpen(){
-		for(int i=0; i<doors.size(); i++){
-			doors.get(i).setOpen(true);
-			doors.get(i).setMoving(false);
-			doors.get(i).setClosed(false);
+		if(generalElectroval.isActive()){
+			for(int i=0; i<doors.size(); i++){
+				doors.get(i).setOpen(true);
+				doors.get(i).setMoving(false);
+				doors.get(i).setClosed(false);
+			}
 		}
 	}
 	
 	public void setMoving(){
-		for(int i=0; i<doors.size(); i++){
-			doors.get(i).setOpen(false);
-			doors.get(i).setMoving(true);
-			doors.get(i).setClosed(false);
+		if(generalElectroval.isActive()){
+			for(int i=0; i<doors.size(); i++){
+				doors.get(i).setOpen(false);
+				doors.get(i).setMoving(true);
+				doors.get(i).setClosed(false);
+			}
 		}
 	}
 	
 	public void setClosed(){
-		for(int i=0; i<doors.size(); i++){
-			doors.get(i).setOpen(false);
-			doors.get(i).setMoving(false);
-			doors.get(i).setClosed(true);
+		if(generalElectroval.isActive()){
+			for(int i=0; i<doors.size(); i++){
+				doors.get(i).setOpen(false);
+				doors.get(i).setMoving(false);
+				doors.get(i).setClosed(true);
+			}
 		}
+	}
+
+	public GeneralElectrovalve getGeneralElectroval() {
+		return generalElectroval;
+	}
+
+	public void setGeneralElectroval(GeneralElectrovalve generalElectroval) {
+		this.generalElectroval = generalElectroval;
 	}
 
 }

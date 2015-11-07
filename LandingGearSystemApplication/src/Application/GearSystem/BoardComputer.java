@@ -6,6 +6,7 @@ package Application.GearSystem;
 import java.util.ArrayList;
 
 import Application.View.ViewController;
+import javafx.application.Platform;
 
 // Start of user code (user defined imports)
 
@@ -34,8 +35,8 @@ public class BoardComputer extends Thread{
 	private ArrayList<Door> doors = new ArrayList<Door>();
 	private ArrayList<Gear> gears = new ArrayList<Gear>();
 	
-	private String request = null;
-	private String currentRequest = null;
+	private int requestState;
+	private int currentState;
 
 	/**
 	 * The constructor.
@@ -47,17 +48,56 @@ public class BoardComputer extends Thread{
 	@Override
 	public void run(){
 		while(true){
-			try { request = "test";
-				if(!request.isEmpty()){
-					currentRequest = request;
-					request = null;
+			try {
+				Thread.sleep(1500);
+				if(requestState != currentState){
+					Platform.runLater(new Runnable() {
+					    public void run() {
+					    	viewController.setFeuState("orange");
+					    }
+					});
 					
-					Thread.sleep(3000);
-					openDoorsElectrovalve.setMoving();
-					Thread.sleep(3000);
-					openDoorsElectrovalve.setOpen();
+					if(requestState < currentState){
+						currentState-=1;
+					}
+					else
+						currentState+=1;
 					
+					switch(currentState){
+					case 0:
+						closeDoorsElectrovalve.setClosed();
+						break;
+					case 1:
+						openDoorsElectrovalve.setMoving();
+						break;
+					case 2:
+						openDoorsElectrovalve.setOpen();
+						break;
+					case 3:
+						openGearsElectrovalve.setUp();
+						break;
+					case 4:
+						openGearsElectrovalve.setMoving();
+						break;
+					case 5:
+						openGearsElectrovalve.setDown();
+						break;
+					case 6:
+						closeDoorsElectrovalve.setMoving();
+						break;
+					case 7:
+						closeDoorsElectrovalve.setClosed();
+						break;
+					}
 				}
+				else{
+					Platform.runLater(new Runnable() {
+					    public void run() {
+					    	viewController.setFeuState("green");
+					    }
+					});
+				}
+				
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -71,11 +111,14 @@ public class BoardComputer extends Thread{
 		Door tmpDoor = null;
 		Gear tmpGear = null;
 		
+		requestState = 0;
+		currentState = 0;
+		
 		openDoorsElectrovalve = new DoorElectrovalve();
 		closeDoorsElectrovalve = new DoorElectrovalve();
 		openGearsElectrovalve = new GearElectrovalve();
 		closeGearsElectrovalve = new GearElectrovalve();
-		generalElectroval = new GeneralElectrovalve();
+		setGeneralElectroval(new GeneralElectrovalve());
 
 		for(int i=0; i<3; i++){
 			tmpDoor = new Door(i);
@@ -99,10 +142,12 @@ public class BoardComputer extends Thread{
 		openGearsElectrovalve.gears = gears;
 		closeGearsElectrovalve.gears = gears;
 		
-		generalElectroval.setCloseGearsElectrovalve(closeGearsElectrovalve);
-		generalElectroval.setCloseDoorsElectrovalve(closeDoorsElectrovalve);
-		generalElectroval.setOpenDoorsElectrovalve(openDoorsElectrovalve);
-		generalElectroval.setOpenGearsElectrovalve(openGearsElectrovalve);
+		openDoorsElectrovalve.setGeneralElectroval(generalElectroval);
+		closeDoorsElectrovalve.setGeneralElectroval(generalElectroval);
+		openGearsElectrovalve.setGeneralElectroval(generalElectroval);
+		closeGearsElectrovalve.setGeneralElectroval(generalElectroval);
+		
+		generalElectroval.setActive(true);
 		
 	}
 
@@ -122,22 +167,6 @@ public class BoardComputer extends Thread{
 	 */
 	public void setViewController(ViewController newViewController) {
 		this.viewController = newViewController;
-	}
-
-	public String getRequest() {
-		return request;
-	}
-
-	public void setRequest(String request) {
-		this.request = request;
-	}
-
-	public String getCurrentRequest() {
-		return currentRequest;
-	}
-
-	public void setCurrentRequest(String currentRequest) {
-		this.currentRequest = currentRequest;
 	}
 	
 	public DoorElectrovalve getOpenDoorsElectrovalve() {
@@ -170,5 +199,29 @@ public class BoardComputer extends Thread{
 
 	public void setCloseGearsElectrovalve(GearElectrovalve closeGearsElectrovalve) {
 		this.closeGearsElectrovalve = closeGearsElectrovalve;
+	}
+
+	public GeneralElectrovalve getGeneralElectroval() {
+		return generalElectroval;
+	}
+
+	public void setGeneralElectroval(GeneralElectrovalve generalElectroval) {
+		this.generalElectroval = generalElectroval;
+	}
+
+	public int getRequestState() {
+		return requestState;
+	}
+
+	public void setRequestState(int requestState) {
+		this.requestState = requestState;
+	}
+
+	public int getCurrentState() {
+		return currentState;
+	}
+
+	public void setCurrentState(int currentState) {
+		this.currentState = currentState;
 	}
 }

@@ -25,6 +25,9 @@ public class ViewController {
 	public static final String DOOR_OPENED		= RESSOURCES + "door2_opened.jpg";
 	public static final String DOOR_MOVING		= RESSOURCES + "door2_moving.jpg";
 	
+	public static final int UP_STATE			= 0;
+	public static final int DOWN_STATE			= 7;
+	
 	@FXML
     private Button up_button;
     
@@ -75,12 +78,12 @@ public class ViewController {
 	
 	@FXML
 	private void handleUpButtonAction(ActionEvent event) {
-		
+		boardComputer.setRequestState(UP_STATE);
 	}
 	
 	@FXML
 	private void handleDownButtonAction(ActionEvent event) {
-		
+		boardComputer.setRequestState(DOWN_STATE);
 	}
 	
 	/*

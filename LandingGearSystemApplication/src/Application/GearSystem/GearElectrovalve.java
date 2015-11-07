@@ -20,28 +20,44 @@ public class GearElectrovalve extends Electrovalve {
 	 * Description of the property gears.
 	 */
 	public ArrayList<Gear> gears;
+	
+	private GeneralElectrovalve generalElectroval = null;
 
 	public void setUp(){
-		for(int i=0; i<gears.size(); i++){
-			gears.get(i).setDown(false);
-			gears.get(i).setUp(true);
-			gears.get(i).setMoving(false);
+		if(generalElectroval.isActive()){
+			for(int i=0; i<gears.size(); i++){
+				gears.get(i).setDown(false);
+				gears.get(i).setUp(true);
+				gears.get(i).setMoving(false);
+			}
 		}
 	}
 	
 	public void setMoving(){
-		for(int i=0; i<gears.size(); i++){
-			gears.get(i).setDown(false);
-			gears.get(i).setUp(false);
-			gears.get(i).setMoving(true);
+		if(generalElectroval.isActive()){
+			for(int i=0; i<gears.size(); i++){
+				gears.get(i).setDown(false);
+				gears.get(i).setUp(false);
+				gears.get(i).setMoving(true);
+			}
 		}
 	}
 
 	public void setDown(){
-		for(int i=0; i<gears.size(); i++){
-			gears.get(i).setDown(true);
-			gears.get(i).setUp(false);
-			gears.get(i).setMoving(false);
+		if(generalElectroval.isActive()){
+			for(int i=0; i<gears.size(); i++){
+				gears.get(i).setDown(true);
+				gears.get(i).setUp(false);
+				gears.get(i).setMoving(false);
+			}
 		}
+	}
+
+	public GeneralElectrovalve getGeneralElectroval() {
+		return generalElectroval;
+	}
+
+	public void setGeneralElectroval(GeneralElectrovalve generalElectroval) {
+		this.generalElectroval = generalElectroval;
 	}
 }

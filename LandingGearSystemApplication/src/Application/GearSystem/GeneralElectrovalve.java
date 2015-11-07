@@ -17,50 +17,26 @@ public class GeneralElectrovalve extends Electrovalve {
 	/**
 	 * Description of the property gearElectrovalves.
 	 */
-	private DoorElectrovalve openDoorsElectrovalve = null;
-	private DoorElectrovalve closeDoorsElectrovalve = null;
-	private GearElectrovalve openGearsElectrovalve = null;
-	private GearElectrovalve closeGearsElectrovalve = null;
+	private boolean active;
 
 	/**
 	 * The constructor.
 	 */
 	public GeneralElectrovalve() {
 		super();
+		
+		active = false;
 	}
 
 	/**
 	 * Getter and Setter
 	 */
-	public DoorElectrovalve getOpenDoorsElectrovalve() {
-		return openDoorsElectrovalve;
+	public boolean isActive() {
+		return active;
 	}
 
-	public void setOpenDoorsElectrovalve(DoorElectrovalve openDoorsElectrovalve) {
-		this.openDoorsElectrovalve = openDoorsElectrovalve;
+	public void setActive(boolean active) {
+		this.active = active;
 	}
-
-	public DoorElectrovalve getCloseDoorsElectrovalve() {
-		return closeDoorsElectrovalve;
-	}
-
-	public void setCloseDoorsElectrovalve(DoorElectrovalve closeDoorsElectrovalve) {
-		this.closeDoorsElectrovalve = closeDoorsElectrovalve;
-	}
-
-	public GearElectrovalve getOpenGearsElectrovalve() {
-		return openGearsElectrovalve;
-	}
-
-	public void setOpenGearsElectrovalve(GearElectrovalve openGearsElectrovalve) {
-		this.openGearsElectrovalve = openGearsElectrovalve;
-	}
-
-	public GearElectrovalve getCloseGearsElectrovalve() {
-		return closeGearsElectrovalve;
-	}
-
-	public void setCloseGearsElectrovalve(GearElectrovalve closeGearsElectrovalve) {
-		this.closeGearsElectrovalve = closeGearsElectrovalve;
-	}
+	
 }
