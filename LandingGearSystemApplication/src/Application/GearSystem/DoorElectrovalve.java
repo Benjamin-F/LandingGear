@@ -12,17 +12,21 @@ import Application.GearSystem.Electrovalve;
 
 /**
  * Description of DoorElectrovalve.
- * 
+ * Move the doors
  * @author lemee
  */
 public class DoorElectrovalve extends Electrovalve {
 	/**
 	 * Description of the property doors.
+	 * Doors which can be set by the doorElectrovalve
 	 */
 	public ArrayList<Door> doors;
 	
 	private GeneralElectrovalve generalElectroval = null;
 
+	/**
+	 * Set doors to opened state
+	 */
 	public void setOpen(){
 		if(generalElectroval.isActive()){
 			for(int i=0; i<doors.size(); i++){
@@ -33,6 +37,9 @@ public class DoorElectrovalve extends Electrovalve {
 		}
 	}
 	
+	/**
+	 * Set doors to moving state
+	 */
 	public void setMoving(){
 		if(generalElectroval.isActive()){
 			for(int i=0; i<doors.size(); i++){
@@ -43,6 +50,9 @@ public class DoorElectrovalve extends Electrovalve {
 		}
 	}
 	
+	/**
+	 * Set doors to closed state
+	 */
 	public void setClosed(){
 		if(generalElectroval.isActive()){
 			for(int i=0; i<doors.size(); i++){
@@ -53,10 +63,18 @@ public class DoorElectrovalve extends Electrovalve {
 		}
 	}
 
+	/**
+	 * Get the generalElectroval
+	 * @return generalElectroval
+	 */
 	public GeneralElectrovalve getGeneralElectroval() {
 		return generalElectroval;
 	}
 
+	/**
+	 * Set the generalElectroval
+	 * @param generalElectroval
+	 */
 	public void setGeneralElectroval(GeneralElectrovalve generalElectroval) {
 		this.generalElectroval = generalElectroval;
 	}

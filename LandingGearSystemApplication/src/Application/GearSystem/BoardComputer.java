@@ -14,7 +14,7 @@ import javafx.application.Platform;
 
 /**
  * Description of BoardComputer.
- * 
+ * Allow the system operation
  * @author lemee
  */
 public class BoardComputer extends Thread{
@@ -111,6 +111,9 @@ public class BoardComputer extends Thread{
 		}
 	}
 	
+	/**
+	 * Initialization of the boardComputer
+	 */
 	public void init(){
 		GearSensor tmpGearSensor = null;
 		DoorSensor tmpDoorSensor = null;
@@ -155,9 +158,6 @@ public class BoardComputer extends Thread{
 		
 	}
 
-	// Start of user code (user defined methods for BoardComputer)
-
-	// End of user code
 	/**
 	 * Returns gearUsageStates.
 	 * @return gearUsageStates 
@@ -167,64 +167,121 @@ public class BoardComputer extends Thread{
 	}
 
 	/**
-	 * Getter and Setter
+	 * Set the viewController
+	 * @param newViewController
 	 */
 	public void setViewController(ViewController newViewController) {
 		this.viewController = newViewController;
 	}
 	
+	/**
+	 * Get the openDoorsElectrovalve
+	 * @return openDoorsElectrovalve
+	 */
 	public DoorElectrovalve getOpenDoorsElectrovalve() {
 		return openDoorsElectrovalve;
 	}
 
+	/**
+	 * Set the openDoorsElectrovalve
+	 * @param openDoorsElectrovalve
+	 */
 	public void setOpenDoorsElectrovalve(DoorElectrovalve openDoorsElectrovalve) {
 		this.openDoorsElectrovalve = openDoorsElectrovalve;
 	}
 
+	/**
+	 * Get the closeDoorsElectrovalve
+	 * @return closeDoorsElectrovalve
+	 */
 	public DoorElectrovalve getCloseDoorsElectrovalve() {
 		return closeDoorsElectrovalve;
 	}
 
+	/**
+	 * Set the closeDoorsElectrovalve
+	 * @param closeDoorsElectrovalve
+	 */
 	public void setCloseDoorsElectrovalve(DoorElectrovalve closeDoorsElectrovalve) {
 		this.closeDoorsElectrovalve = closeDoorsElectrovalve;
 	}
 
+	/**
+	 * Get the openGearsElectrovalve
+	 * @return openGearsElectrovalve
+	 */
 	public GearElectrovalve getOpenGearsElectrovalve() {
 		return openGearsElectrovalve;
 	}
 
+	/**
+	 * Set the openGearsElectrovalve
+	 * @param openGearsElectrovalve
+	 */
 	public void setOpenGearsElectrovalve(GearElectrovalve openGearsElectrovalve) {
 		this.openGearsElectrovalve = openGearsElectrovalve;
 	}
 
+	/**
+	 * Get the closeGearsElectrovalve
+	 * @return closeGearsElectrovalve
+	 */
 	public GearElectrovalve getCloseGearsElectrovalve() {
 		return closeGearsElectrovalve;
 	}
 
+	/**
+	 * Get the closeGearsElectrovalve
+	 * @param closeGearsElectrovalve
+	 */
 	public void setCloseGearsElectrovalve(GearElectrovalve closeGearsElectrovalve) {
 		this.closeGearsElectrovalve = closeGearsElectrovalve;
 	}
 
+	/**
+	 * Get the generalElectroval
+	 * @return generalElectroval
+	 */
 	public GeneralElectrovalve getGeneralElectroval() {
 		return generalElectroval;
 	}
 
+	/**
+	 * Set the generalElectroval
+	 * @param generalElectroval
+	 */
 	public void setGeneralElectroval(GeneralElectrovalve generalElectroval) {
 		this.generalElectroval = generalElectroval;
 	}
 
+	/**
+	 * Get the requestState
+	 * @return requestState
+	 */
 	public int getRequestState() {
 		return requestState;
 	}
 
+	/**
+	 * Set the requestState
+	 * @param requestState
+	 */
 	public void setRequestState(int requestState) {
 		this.requestState = requestState;
 	}
 
+	/**
+	 * Get the currentState
+	 * @return currentState
+	 */
 	public int getCurrentState() {
 		return currentState;
 	}
 
+	/**
+	 * Set the currentState
+	 * @param currentState
+	 */
 	public void setCurrentState(int currentState) {
 		this.currentState = currentState;
 	}

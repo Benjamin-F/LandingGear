@@ -11,30 +11,25 @@ import Application.View.ViewController;
 
 /**
  * Description of Sensor.
- * 
+ * Check state of doors and gears 
  * @author lemee
  */
 public abstract class Sensor extends Thread{
 	
-	/**
-	 * Description of the property boardComputers.
-	 */
 	public BoardComputer boardComputers = null;
 
 	protected ViewController viewController = null;
 
 	/**
-	 * The constructor.
+	 * Constructor
+	 * @param viewController
 	 */
 	public Sensor(ViewController viewController) {
 		super();
 		
 		this.viewController = viewController;
 	}
-
-	// Start of user code (user defined methods for Sensor)
-
-	// End of user code
+	
 	/**
 	 * Returns boardComputers.
 	 * @return boardComputers 

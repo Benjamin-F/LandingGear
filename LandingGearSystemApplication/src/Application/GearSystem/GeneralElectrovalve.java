@@ -10,12 +10,13 @@ import Application.GearSystem.Electrovalve;
 
 /**
  * Description of GeneralElectrovalve.
- * 
+ * Move doors or gears
  * @author lemee
  */
 public class GeneralElectrovalve extends Electrovalve {
 	/**
 	 * Description of the property gearElectrovalves.
+	 * True if the general electrovalve is stimulated
 	 */
 	private boolean active;
 
@@ -29,12 +30,17 @@ public class GeneralElectrovalve extends Electrovalve {
 	}
 
 	/**
-	 * Getter and Setter
+	 * Get active
+	 * @return active
 	 */
 	public boolean isActive() {
 		return active;
 	}
 
+	/**
+	 * Set active
+	 * @param active
+	 */
 	public void setActive(boolean active) {
 		this.active = active;
 	}

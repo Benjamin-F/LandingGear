@@ -12,17 +12,21 @@ import Application.GearSystem.Electrovalve;
 
 /**
  * Description of GearElectrovalve.
- * 
+ * Move the gears
  * @author lemee
  */
 public class GearElectrovalve extends Electrovalve {
 	/**
 	 * Description of the property gears.
+	 * Gears which can be set by the gearElectrovalve
 	 */
 	public ArrayList<Gear> gears;
 	
 	private GeneralElectrovalve generalElectroval = null;
 
+	/**
+	 * Set gears to up state
+	 */
 	public void setUp(){
 		if(generalElectroval.isActive()){
 			for(int i=0; i<gears.size(); i++){
@@ -33,6 +37,9 @@ public class GearElectrovalve extends Electrovalve {
 		}
 	}
 	
+	/**
+	 * Set gears to moving state
+	 */
 	public void setMoving(){
 		if(generalElectroval.isActive()){
 			for(int i=0; i<gears.size(); i++){
@@ -43,6 +50,9 @@ public class GearElectrovalve extends Electrovalve {
 		}
 	}
 
+	/**
+	 * Set gears to down state
+	 */
 	public void setDown(){
 		if(generalElectroval.isActive()){
 			for(int i=0; i<gears.size(); i++){
@@ -53,10 +63,18 @@ public class GearElectrovalve extends Electrovalve {
 		}
 	}
 
+	/**
+	 * Get the generalElectroval
+	 * @return generalElectroval
+	 */
 	public GeneralElectrovalve getGeneralElectroval() {
 		return generalElectroval;
 	}
 
+	/**
+	 * Set the generalElectroval
+	 * @param generalElectroval
+	 */
 	public void setGeneralElectroval(GeneralElectrovalve generalElectroval) {
 		this.generalElectroval = generalElectroval;
 	}

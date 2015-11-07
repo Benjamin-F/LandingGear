@@ -7,6 +7,11 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+/**
+ * 
+ * @author lemee
+ *
+ */
 public class ViewController {
 	
 	public static final String RESSOURCES 		= "../Images/";
@@ -63,6 +68,10 @@ public class ViewController {
 	
 	private BoardComputer boardComputer = null;
     
+	/**
+	 * Constructor
+	 * @param boardComputer
+	 */
 	public ViewController(BoardComputer boardComputer){
 		this.boardComputer = boardComputer;
 	}
@@ -87,9 +96,10 @@ public class ViewController {
 		boardComputer.setRequestState(DOWN_STATE);
 		setHandleState(false);
 	}
-	
-	/*
-	 * True if up, false if down
+
+	/**
+	 * Set state of the handle
+	 * @param up : true if handle up, false if down
 	 */
 	public void setHandleState(boolean up){
 		if(up){
@@ -100,8 +110,9 @@ public class ViewController {
 		}
 	}
 	
-	/*
-	 * state : green, orange, red
+	/**
+	 * Set the state of the light
+	 * @param state :green, orange, red
 	 */
 	public void setFeuState(String state){
 		switch(state){
@@ -118,10 +129,11 @@ public class ViewController {
 					.getResourceAsStream(FEU_ROUGE)));
 		}
 	}
-	
-	/*
-	 * id : [0-2]
-	 * state : extracted, moving, retracted
+
+	/**
+	 * Set the state of the gear
+	 * @param id : id of the gear
+	 * @param state : extracted, moving, retracted
 	 */
 	public void setGearState(int id, String state){
 		switch(state){
@@ -140,9 +152,10 @@ public class ViewController {
 		}
 	}
 	
-	/*
-	 * id : [0-2]
-	 * state : opened, moving, closed
+	/**
+	 * Set the door state
+	 * @param id : id of the door
+	 * @param state : opened, moving, closed
 	 */
 	public void setDoorState(int id, String state){
 		switch(state){

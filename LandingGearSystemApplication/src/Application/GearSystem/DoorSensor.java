@@ -12,7 +12,7 @@ import javafx.application.Platform;
 
 /**
  * Description of DoorSensor.
- * 
+ * Check state of doors
  * @author lemee
  */
 public class DoorSensor extends Sensor {
@@ -50,7 +50,6 @@ public class DoorSensor extends Sensor {
 		}
 	}
 	
-	//Door
 	private Door door = null;
 	
 	/**

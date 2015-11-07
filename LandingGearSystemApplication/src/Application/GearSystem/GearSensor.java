@@ -12,7 +12,7 @@ import javafx.application.Platform;
 
 /**
  * Description of GearSensor.
- * 
+ * Check state of gears
  * @author lemee
  */
 public class GearSensor extends Sensor {

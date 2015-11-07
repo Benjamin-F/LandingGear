@@ -11,6 +11,11 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+/**
+ * Main class
+ * @author lemee
+ *
+ */
 public class App extends Application {
 
 	private ViewController viewController = null;
