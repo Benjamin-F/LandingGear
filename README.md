@@ -50,10 +50,11 @@ As this first version only expects two actions from the user and doesn't handle 
 #### IV. Demo
 
 Here are the screenshots of the outgoing sequence:<br>
-<img src="/Screen/out1.png" alt="alt text" width="400" height="300">
-<img src="/Screen/out2.png" alt="alt text" width="400" height="300">
-<img src="/Screen/out3.png" alt="alt text" width="400" height="300">
-<img src="/Screen/out4.png" alt="alt text" width="400" height="300">
-<img src="/Screen/out5.png" alt="alt text" width="400" height="300">
-<img src="/Screen/out6.png" alt="alt text" width="400" height="300">
-<img src="/Screen/out7.png" alt="alt text" width="400" height="300">
+<img src="/Screen/out1.png" alt="alt text" width="300" height="600"><br>
+<img src="/Screen/out2.png" alt="alt text" width="300" height="600"><br>
+<img src="/Screen/out3.png" alt="alt text" width="300" height="600"><br>
+<img src="/Screen/out4.png" alt="alt text" width="300" height="600"><br>
+<img src="/Screen/out5.png" alt="alt text" width="300" height="600"><br>
+<img src="/Screen/out6.png" alt="alt text" width="300" height="600"><br>
+<img src="/Screen/out7.png" alt="alt text" width="300" height="600"><br>
+<img src="/Screen/out8.png" alt="alt text" width="300" height="600"><br>
