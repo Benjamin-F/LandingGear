@@ -49,7 +49,7 @@ public class BoardComputer extends Thread{
 	public void run(){
 		while(true){
 			try {
-				Thread.sleep(1500);
+				Thread.sleep(1000);
 				if(requestState != currentState){
 					Platform.runLater(new Runnable() {
 					    public void run() {
@@ -83,9 +83,12 @@ public class BoardComputer extends Thread{
 						openGearsElectrovalve.setDown();
 						break;
 					case 6:
-						closeDoorsElectrovalve.setMoving();
+						openDoorsElectrovalve.setOpen();
 						break;
 					case 7:
+						closeDoorsElectrovalve.setMoving();
+						break;
+					case 8:
 						closeDoorsElectrovalve.setClosed();
 						break;
 					}
