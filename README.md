@@ -1,6 +1,6 @@
 # The Landing Gears Sytem
 
-Please note that our jar file needs jdk1.8 to work correctly.
+Please note that our jar file needs jdk1.8 to execute properly.
 
 ### I. Wich project life cycle ?
 
