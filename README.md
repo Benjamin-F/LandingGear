@@ -1,7 +1,7 @@
-# The Landing Gear Sytem
+# The Landing Gears Sytem
 ### I. Wich project life cycle ?
 
-Before to choose wich methods we will use, we must define them.
+Before to choose wich method we will use, we must define them.
 
 #### Waterfall lifecycle
 The Waterfall methodology is a stage by stage sequencial approach.
