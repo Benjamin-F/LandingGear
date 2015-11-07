@@ -14,7 +14,7 @@ import javafx.scene.image.ImageView;
  */
 public class ViewController {
 	
-	public static final String RESSOURCES 		= "../Images/";
+	public static final String RESSOURCES 		= "/Application/Images/";
 	
 	public static final String FEU_VERT 		= RESSOURCES + "feu_vert.jpg";
 	public static final String FEU_ROUGE 		= RESSOURCES + "feu_rouge.jpg";
