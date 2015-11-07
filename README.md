@@ -1,4 +1,7 @@
 # The Landing Gears Sytem
+
+Please note that our jar file needs jdk1.8 to work correctly.
+
 ### I. Wich project life cycle ?
 
 Before to choose wich method we will use, we must define them.
